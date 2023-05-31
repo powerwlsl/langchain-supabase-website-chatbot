@@ -39,7 +39,11 @@ async function embedDocuments(
   embeddings: Embeddings,
 ) {
   console.log('creating embeddings...');
-  await SupabaseVectorStore.fromDocuments(client, docs, embeddings);
+  await SupabaseVectorStore.fromDocuments(docs, embeddings, {
+    client,
+    tableName: 'documents',
+    queryName: 'notion',
+  });
   console.log('embeddings successfully stored in supabase');
 }
 

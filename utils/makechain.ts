@@ -37,9 +37,6 @@ export const makeChain = (
     new OpenAI({
       temperature: 0,
       streaming: Boolean(onTokenStream),
-      callbackManager: {
-        handleNewToken: onTokenStream,
-      },
     }),
     { prompt: QA_PROMPT },
   );

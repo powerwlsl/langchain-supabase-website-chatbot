@@ -12,7 +12,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore \"**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"**/*.+(ts|js|tsx)\" --write",
-    "scrape-embed": "tsx -r dotenv/config scripts/scrape-embed.ts"
+    "scrape-embed": "tsx -r dotenv/config scripts/scrape-embed.ts",
+    "ingest": "tsx -r dotenv/config scripts/ingest-data.ts"
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",
@@ -20,7 +21,7 @@
     "cheerio": "1.0.0-rc.12",
     "clsx": "^1.2.1",
     "dotenv": "^16.0.3",
-    "langchain": "^0.0.26",
+    "langchain": "0.0.82",
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

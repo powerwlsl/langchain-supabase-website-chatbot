@@ -18,9 +18,17 @@ export default async function handler(
   const sanitizedQuestion = question.trim().replaceAll('\n', ' ');
 
   /* create vectorstore*/
+  // client: SupabaseClient;
+  // tableName?: string;
+  // queryName?: string;
+  // filter?: SupabaseMetadata;
   const vectorStore = await SupabaseVectorStore.fromExistingIndex(
-    supabaseClient,
-    new OpenAIEmbeddings(),
+    new OpenAIEmbeddings({}),
+    {
+      client: supabaseClient,
+      tableName: 'pdfs',
+      queryName: 'pdfs',
+    }
   );
 
   res.writeHead(200, {
